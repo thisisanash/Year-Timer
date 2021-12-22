@@ -1,0 +1,193 @@
+/* 
+  --------------------
+      Fonts
+  --------------------
+  */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* 
+    --------------------
+      Veriable
+    --------------------
+*/
+
+:root {
+  /* Primery Color */
+  --primery-clr: #01a1a1;
+
+  /* Font */
+  --ff: "Poppins", sans-serif;
+  --f-clr: #002f2f;
+
+  /* Background Color */
+  --bg-clr: #ffffff;
+  --bg2-clr: #fafaff;
+  --bg3-clr: #cbecf0;
+  --bg4-clr: #d2faff;
+
+  --grey-shade-1: #2e4747;
+  --black-clr: #222;
+  --max-width: 1170px;
+  --fixed-width-sqr: 800px;
+  --fixed-width: 620px;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --spacing-m: 0.5rem;
+  --spacing-l: 1rem;
+  --radius: 1rem;
+  --radius-2: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+    --------------------
+      Global Style  
+    --------------------
+
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 0.5px solid #80808080; */
+}
+
+::selection {
+  background-color: var(--primery-clr);
+}
+
+body {
+  overflow: auto;
+  font-family: var(--ff);
+  background: var(--bg2-clr);
+  background-color: var(--bg2-clr);
+  /* height: 100vh; */
+  /* overflow: hidden; */
+}
+
+body::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg2-clr);
+  margin: auto 15px;
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  background: linear-gradient(
+    0deg,
+    var(--bg2-clr) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+footer a {
+  margin: auto auto 0 auto;
+  align-self: baseline;
+  padding: 10px 10px 0 10px;
+  font-size: 0.75rem;
+  color: var(--primery-clr);
+}
+
+a {
+  text-decoration: underline;
+  color: var(--primery-clr);
+  font-weight: 800;
+}
+
+/* 
+  --------------------
+    Main Style  
+  --------------------
+*/
+
+header {
+  width: 100%;
+  padding: 20px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+  border-bottom: 2px solid var(--primery-clr);
+}
+
+header nav div {
+  font-size: 1.2rem;
+  letter-spacing: var(--spacing);
+}
+
+header .title {
+  margin-top: 10vh;
+  text-align: center;
+}
+header .title h1 {
+  font-weight: 600;
+}
+
+section.main {
+  padding: 5vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+section.main h2 {
+  margin-top: 5vh;
+  text-transform: uppercase;
+}
+
+section.main .timer {
+  width: 100%;
+  margin: 5vh auto 0;
+  max-width: var(--fixed-width-sqr);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+@media screen and (max-width: 700px) {
+  header .title {
+    margin-top: 2rem;
+  }
+  section.main {
+    padding: 1rem 1rem 0;
+  }
+  section.main .timer {
+    margin: 1rem auto 1.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .timer .Mons {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+.timer div {
+  margin: 1rem;
+  background: var(--primery-clr);
+  color: var(--bg-clr);
+  border-radius: var(--radius);
+}
+.timer div h2 {
+  font-size: 3rem;
+}
